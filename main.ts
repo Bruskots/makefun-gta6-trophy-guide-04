@@ -14,6 +14,12 @@
 // Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
+// Leonida Trophy Guide — rebuilt entry for gta6-trophy-guide-01.
+// app/ now holds the full guide: 55 trophies with cited guides in
+// app/data/trophies.json, the tracker in app.js, the roadmap in roadmap.js.
+// This program only hands the entry in; it changes no file it copies.
+// (Rebuilt from the kit starter in a recorded session; no code is copied
+// from any earlier entry.)
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';

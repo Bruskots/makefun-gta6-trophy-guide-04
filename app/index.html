@@ -3,23 +3,68 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Trophy Guide — GTA VI · all 55 trophies</title>
+<meta name="description" content="Offline guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI: roadmap to the platinum, missable flags, and a cited guide for every trophy.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23241a44'/%3E%3Cpath d='M16 5 L25 16 L16 27 L7 16 Z' fill='%23ff6b5e'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<noscript><p style="padding:16px 20px;background:#3d1420;color:#f2ede4">This guide needs JavaScript to load its trophy data and save your progress. Please enable JavaScript and reload.</p></noscript>
+<header class="masthead">
+  <p class="kicker">Grand Theft Auto VI · PlayStation 5 · offline guide</p>
+  <h1>Leonida Trophy Guide</h1>
+  <p class="lede">All 55 trophies — 1 platinum, 2 gold, 6 silver, 46 bronze — with a roadmap to the platinum, the one trophy you can miss, and a guide in our own words for every trophy, each citing its sources.</p>
+  <div class="progress-wrap" aria-label="Trophy progress">
+    <div class="progress-line"><strong id="progress-text">0 of 55 earned</strong><span id="progress-detail">Platinum 0/1 · Gold 0/2 · Silver 0/6 · Bronze 0/46</span></div>
+    <div class="bar"><div id="progress-fill" class="fill" style="width:0%"></div></div>
+  </div>
+  <nav class="tabs" aria-label="Views">
+    <button id="tab-tracker" type="button" class="tab active" aria-current="page">Tracker</button>
+    <button id="tab-roadmap" type="button" class="tab">Roadmap to the platinum</button>
+  </nav>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<main>
+  <section id="view-tracker" aria-label="Trophy tracker">
+    <div class="controls">
+      <label class="search">Search <input id="search" type="search" placeholder="Name, mission or keyword…" autocomplete="off"></label>
+      <label>Kind <select id="kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="online">Online</option>
+      </select></label>
+      <label>Grade <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select></label>
+      <label class="check"><input id="spoiler" type="checkbox"> Spoiler-free mode</label>
+      <label class="check"><input id="earned-only" type="checkbox"> Earned only</label>
+      <button id="export" type="button">Export progress</button>
+      <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <p id="missable-banner" class="banner">⚠ One trophy can be missed: <strong>Positive Mental Attitude</strong> — meditate at Jason's house in Chapter 1, after Down to Earth. <a href="#trophy-28">Open its guide</a></p>
+    <p id="empty" class="empty" hidden>No trophies match these filters. There are no online trophies in this list — every one of the 55 is single-player and offline.</p>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section id="view-roadmap" aria-label="Roadmap to the platinum" hidden>
+    <div id="roadmap"></div>
+  </section>
+</main>
+
+<footer>
+  <h2>Sources</h2>
+  <p>Official trophy names and descriptions are PlayStation's, as listed by Exophase and PSNProfiles (list public 18 November 2026). Every guide on this page is written for this page, in its own words; a source is cited, never copied.</p>
+  <ul id="source-list"></ul>
+  <p class="fineprint">Fan-made guide. Not affiliated with Rockstar Games or PlayStation. No Rockstar logo, artwork or game screenshots are used. Works fully offline: this page fetches nothing beyond its own files.</p>
+</footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>
